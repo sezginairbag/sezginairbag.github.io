@@ -43,25 +43,29 @@
         .hero { padding: 140px 0 60px; text-align: center; }
         .hero h1 { font-family: 'Orbitron'; font-size: clamp(1.5rem, 5vw, 3rem); margin-bottom: 15px; }
         
-        .section-title { text-align: center; font-family: 'Orbitron'; margin: 60px 0 30px; color: var(--accent); }
+        .section-title { text-align: center; font-family: 'Orbitron'; margin: 60px 0 30px; color: var(--accent); letter-spacing: 2px; }
         
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .card { background: var(--card-bg); border-radius: 20px; padding: 20px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
+        .card { background: var(--card-bg); border-radius: 20px; padding: 25px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; height: 100%; display: flex; flex-direction: column; }
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
         
         /* Slider Fix */
-        .comparison-container { position: relative; width: 100%; height: 280px; overflow: hidden; border-radius: 15px; cursor: ew-resize; background: #000; }
+        .comparison-container { position: relative; width: 100%; height: 280px; overflow: hidden; border-radius: 15px; cursor: ew-resize; background: #000; margin-bottom: 15px; }
         .comparison-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
         .img-before { position: absolute; top: 0; left: 0; height: 100%; width: 50%; overflow: hidden; z-index: 2; border-right: 3px solid var(--primary); }
         .img-before img { position: absolute; top: 0; left: 0; height: 100%; object-fit: cover; }
         .comparison-slider-bar { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--primary); z-index: 3; pointer-events: none; }
 
-        .btn { display: inline-block; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; cursor: pointer; border: none; width: 100%; text-align: center; transition: 0.3s; }
+        .btn { display: inline-block; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 600; cursor: pointer; border: none; width: 100%; text-align: center; transition: 0.3s; margin-top: auto; }
         .btn-primary { background: var(--primary); color: white; }
         .btn-wp { background: #25d366; color: white; margin-top: 10px; }
+        .btn-outline { background: transparent; border: 1px solid var(--primary); color: white; margin-top: 10px; }
 
         .modal { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
         .modal-content { background: #1a1a1c; padding: 30px; border-radius: 20px; width: 90%; max-width: 400px; border: 1px solid var(--primary); }
         input, select { width: 100%; padding: 12px; margin: 10px 0; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); background: #0f0f12; color: #fff; }
+
+        footer { text-align: center; padding: 40px 0; opacity: 0.6; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px; }
     </style>
 </head>
 <body>
@@ -69,36 +73,66 @@
 <nav>
     <div class="container nav-content">
         <a href="#" class="logo">SEZGİN <span>AIRBAG</span></a>
-        <a href="tel:05457289717" style="color:var(--primary); text-decoration:none;"><i class="fas fa-phone"></i> ARA</a>
+        <a href="tel:05457289717" style="color:var(--primary); text-decoration:none; font-weight: bold;"><i class="fas fa-phone"></i> HEMEN ARA</a>
     </div>
 </nav>
 
 <section class="hero container">
-    <h1 data-aos="fade-down">Oto Güvenlik Sistemleri</h1>
-    <p data-aos="fade-up">Antalya Akdeniz Sanayi Sitesi'nde Airbag ve Emniyet Kemeri Uzmanı.</p>
+    <h1 data-aos="fade-down">Antalya Oto Güvenlik Sistemleri</h1>
+    <p data-aos="fade-up">Airbag Tamiri, Emniyet Kemeri Onarımı ve Beyin Sıfırlama Uzmanı.</p>
 </section>
 
 <div class="container">
+    <h2 class="section-title">Uzman Kadromuz</h2>
+    <div class="grid" style="margin-bottom: 40px;">
+        <div class="card" data-aos="fade-right">
+            <div style="text-align: center; margin-bottom: 15px;">
+                <i class="fas fa-microchip fa-3x" style="color: var(--primary);"></i>
+            </div>
+            <h3 style="text-align: center;">Müslüm Usta</h3>
+            <p style="text-align: center; font-size: 0.9rem; opacity: 0.7; margin-bottom: 20px;">Airbag Beyin, Yazılım ve Elektronik Sistemler Uzmanı</p>
+            <a href="tel:05457289717" class="btn btn-primary"><i class="fas fa-phone"></i> Ara: 0545 728 9717</a>
+            <a href="https://wa.me/905457289717" class="btn btn-wp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        
+        <div class="card" data-aos="fade-left">
+            <div style="text-align: center; margin-bottom: 15px;">
+                <i class="fas fa-tools fa-3x" style="color: var(--accent);"></i>
+            </div>
+            <h3 style="text-align: center;">Yavuz Usta</h3>
+            <p style="text-align: center; font-size: 0.9rem; opacity: 0.7; margin-bottom: 20px;">Emniyet Kemeri, Mekanik Onarım ve Torpido Uzmanı</p>
+            <a href="tel:05458320459" class="btn btn-primary"><i class="fas fa-phone"></i> Ara: 0545 832 0459</a>
+            <a href="https://wa.me/905458320459" class="btn btn-wp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </div>
+
     <h2 class="section-title">Hizmetlerimiz</h2>
     <div class="grid" id="hizmetler-listesi"></div>
 
-    <h2 class="section-title">Önce / Sonra</h2>
+    <h2 class="section-title">Önce / Sonra Başarılarımız</h2>
     <div class="grid" id="galeri-listesi"></div>
 </div>
 
 <div id="bookingModal" class="modal">
     <div class="modal-content">
-        <h3 style="margin-bottom:15px; font-family: 'Orbitron';">Randevu Formu</h3>
+        <h3 style="margin-bottom:15px; font-family: 'Orbitron';">Randevu Alın</h3>
         <form id="randevuForm">
             <input type="text" id="m_ad" placeholder="Ad Soyad" required>
             <input type="tel" id="m_tel" placeholder="Telefon" required>
-            <input type="text" id="m_plaka" placeholder="Plaka" required>
+            <input type="text" id="m_plaka" placeholder="Araç Plakası" required>
             <select id="m_hizmet"></select>
-            <button type="submit" class="btn btn-primary">GÖNDER</button>
-            <button type="button" onclick="closeModal()" class="btn" style="background:none; color:#666;">Kapat</button>
+            <button type="submit" class="btn btn-primary">TALEBİ GÖNDER</button>
+            <button type="button" onclick="closeModal()" class="btn" style="background:none; color:#666; margin-top: 5px;">Kapat</button>
         </form>
     </div>
 </div>
+
+<footer>
+    <div class="container">
+        <p><i class="fas fa-map-marker-alt"></i> Akdeniz Sanayi Sitesi, Şafak Mah. 5024. Sk. No:12 Kepez/Antalya</p>
+        <p style="margin-top: 10px;">&copy; 2026 Sezgin Airbag - Tüm Hakları Saklıdır.</p>
+    </div>
+</footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
@@ -119,13 +153,13 @@
                         <img src="${h.ResimURL}" style="width:100%; height:180px; object-fit:cover; border-radius:15px; margin-bottom:15px;">
                         <h3>${h.HizmetAdı}</h3>
                         <p style="font-size:0.85rem; opacity:0.7; margin:10px 0;">${h.Aciklama}</p>
-                        <div style="color:var(--accent); font-weight:bold; margin-bottom:15px;">${h.Fiyat} ₺</div>
+                        <div style="color:var(--accent); font-weight:bold; margin-bottom:15px; font-size: 1.1rem;">${h.Fiyat} ₺</div>
                         <button onclick="openModal('${h.HizmetAdı}')" class="btn btn-primary">Randevu Al</button>
                     </div>`;
                 hSelect.innerHTML += `<option value="${h.HizmetAdı}">${h.HizmetAdı}</option>`;
             });
 
-            // Galeri (Slider Fix)
+            // Galeri Slider
             const gList = document.getElementById('galeri-listesi');
             data.galeri.forEach((g, i) => {
                 gList.innerHTML += `
@@ -133,24 +167,28 @@
                         <div class="comparison-container" onmousemove="moveSlider(event, this)" ontouchmove="moveSlider(event, this)">
                             <img src="${g.SonraResimURL}" class="comparison-img">
                             <div class="img-before" style="width:50%;">
-                                <img src="${g.OnceResimURL}" style="width:${gList.offsetWidth/3}px">
+                                <img src="${g.OnceResimURL}" class="raw-img">
                             </div>
                             <div class="comparison-slider-bar" style="left:50%;"></div>
                         </div>
-                        <h4 style="margin-top:15px;">${g.HizmetAdi}</h4>
+                        <h4 style="margin-top:5px;">${g.HizmetAdi}</h4>
+                        <p style="font-size:0.8rem; opacity:0.6;">${g.Aciklama || ''}</p>
                     </div>`;
             });
-            // Resim genişliklerini eşitle
-            document.querySelectorAll('.img-before img').forEach(img => {
-                img.style.width = img.parentElement.parentElement.offsetWidth + "px";
-            });
+
+            // Resim genişliklerini slider konteynerine sabitle
+            setTimeout(() => {
+                document.querySelectorAll('.raw-img').forEach(img => {
+                    img.style.width = img.parentElement.parentElement.offsetWidth + "px";
+                });
+            }, 500);
 
         } catch (e) { console.error(e); }
     }
 
     function moveSlider(e, container) {
         const rect = container.getBoundingClientRect();
-        let x = (e.pageX || e.touches[0].pageX) - rect.left;
+        let x = (e.pageX || (e.touches ? e.touches[0].pageX : 0)) - rect.left;
         let percent = Math.max(0, Math.min(100, (x / rect.width) * 100));
         container.querySelector('.img-before').style.width = percent + "%";
         container.querySelector('.comparison-slider-bar').style.left = percent + "%";
@@ -161,10 +199,14 @@
 
     document.getElementById('randevuForm').onsubmit = async (e) => {
         e.preventDefault();
-        const b = e.target.querySelector('button'); b.innerText = "Gönderiliyor...";
+        const b = e.target.querySelector('button'); b.innerText = "İletiliyor...";
         const p = { ad: document.getElementById('m_ad').value, tel: document.getElementById('m_tel').value, plaka: document.getElementById('m_plaka').value, hizmet: document.getElementById('m_hizmet').value };
-        await fetch(SCRIPT_URL, { method: 'POST', body: JSON.stringify(p) });
-        alert("Randevu talebiniz iletildi!"); closeModal(); b.innerText = "GÖNDER";
+        try {
+            await fetch(SCRIPT_URL, { method: 'POST', body: JSON.stringify(p) });
+            alert("Randevu talebiniz ustalarımıza iletildi!"); 
+            closeModal();
+        } catch(e) { alert("Bir hata oluştu, lütfen arayarak randevu alın."); }
+        b.innerText = "TALEBİ GÖNDER";
     };
 
     window.onload = loadData;
